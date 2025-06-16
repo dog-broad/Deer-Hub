@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DEER Hub – Employee Engagement</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <div id="navbar"></div>
+  <main class="container flex-grow-1">
+    <section class="hero-section mb-4 mt-3">
+      <h1 class="display-5 fw-bold text-glass mb-3">Welcome to DEER Hub</h1>
+      <p class="lead">Your all-in-one portal for employee engagement, resources, and requests.</p>
+    </section>
+    <section id="news-ticker" class="mb-4"></section>
+    <div class="row g-4 justify-content-center mb-5">
+      <div class="col-12 col-md-4">
+        <div class="card feature-card h-100 text-center p-4">
+          <div class="card-icon mb-2">📝</div>
+          <h5 class="card-title">Leave Request</h5>
+          <p class="card-text">Submit and track your leave requests easily. Our streamlined workflow ensures transparency and timely approvals for all your time-off needs.</p>
+          <a href="/pages/leave.html" class="btn btn-primary mt-2">Request Leave</a>
+        </div>
+      </div>
+      <div class="col-12 col-md-4">
+        <div class="card feature-card h-100 text-center p-4">
+          <div class="card-icon mb-2">🔐</div>
+          <h5 class="card-title">Login / Register</h5>
+          <p class="card-text">Access your personalized dashboard and features. Secure authentication and role management for every team member.</p>
+          <a href="/pages/auth.html" class="btn btn-primary mt-2">Login / Register</a>
+        </div>
+      </div>
+      <div class="col-12 col-md-4 d-none" id="upload-card">
+        <div class="card feature-card h-100 text-center p-4">
+          <div class="card-icon mb-2">📤</div>
+          <h5 class="card-title">Document Upload</h5>
+          <p class="card-text">Managers can upload important documents for the team. Centralized resource sharing for enhanced collaboration and compliance.</p>
+          <a href="/pages/upload.html" class="btn btn-primary mt-2">Upload Docs</a>
+        </div>
+      </div>
+    </div>
+    <section class="row g-4 align-items-stretch mb-5">
+      <div class="col-12 col-md-6">
+        <div class="glassmorph-card p-4 h-100">
+          <h4 class="fw-bold mb-2">Why Choose DEER Hub?</h4>
+          <ul class="mb-0">
+            <li>Boost employee engagement with interactive tools and real-time updates.</li>
+            <li>Reduce administrative overhead with automated workflows and self-service features.</li>
+            <li>Ensure data security and privacy with robust session-based access control.</li>
+            <li>Future-proof your organization with a platform built for extensibility and integration.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-12 col-md-6">
+        <div class="glassmorph-card p-4 h-100">
+          <h4 class="fw-bold mb-2">Key Features</h4>
+          <ul class="mb-0">
+            <li>Modular UI components for rapid development and easy maintenance.</li>
+            <li>Role-based dashboards and personalized notifications.</li>
+            <li>Mobile-first, responsive layouts for on-the-go access.</li>
+            <li>Ready for API and backend integration as your needs grow.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+  <div id="footer" class="mt-5"></div>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="/js/main.js"></script>
+  <script src="/js/ticker.js"></script>
+</body>
+</html> 

@@ -1,0 +1,143 @@
+/* Centralized Modern Glassmorphism Styles for DEER Hub */
+:root {
+  --glass-bg: rgba(255, 255, 255, 0.18);
+  --glass-border: rgba(255, 255, 255, 0.35);
+  --glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.18);
+  --primary-gradient: linear-gradient(135deg, #e0eafc 0%, #cfdef3 100%);
+  --accent: #6c63ff;
+  --accent2: #f7971e;
+  --radius: 1.25rem;
+}
+
+body {
+  background: var(--primary-gradient);
+  min-height: 100vh;
+  font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+  color: #222;
+}
+
+.glassmorph-navbar, .glassmorph-footer, .glassmorph-card, .glassmorph-form, .glassmorph-modal {
+  background: var(--glass-bg);
+  border-radius: var(--radius);
+  box-shadow: var(--glass-shadow);
+  border: 1px solid var(--glass-border);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.glassmorph-navbar {
+  margin-bottom: 1.5rem;
+}
+
+.glassmorph-footer {
+  margin-top: 2rem;
+  font-size: 1rem;
+  border-top: 1px solid var(--glass-border);
+}
+
+.footer-link {
+  color: #6c63ff;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.footer-link:hover {
+  color: #f7971e;
+}
+
+.hero-section {
+  background: var(--glass-bg);
+  border-radius: var(--radius);
+  box-shadow: var(--glass-shadow);
+  padding: 3rem 2rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  backdrop-filter: blur(10px);
+}
+
+.feature-card {
+  background: var(--glass-bg);
+  border-radius: var(--radius);
+  box-shadow: var(--glass-shadow);
+  border: 1px solid var(--glass-border);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.feature-card:hover {
+  transform: translateY(-6px) scale(1.03);
+  box-shadow: 0 12px 32px 0 rgba(31, 38, 135, 0.22);
+}
+
+#news-ticker {
+  background: var(--glass-bg);
+  border-radius: var(--radius);
+  box-shadow: var(--glass-shadow);
+  border: 1px solid var(--glass-border);
+  padding: 0.75rem 1.5rem;
+  margin-bottom: 2rem;
+  font-size: 1.1rem;
+  color: #333;
+  overflow: hidden;
+  position: relative;
+}
+
+.glassmorph-form {
+  background: var(--glass-bg);
+  border-radius: var(--radius);
+  box-shadow: var(--glass-shadow);
+  border: 1px solid var(--glass-border);
+  padding: 2rem 1.5rem;
+}
+
+.form-control, .form-select {
+  background: rgba(255,255,255,0.7);
+  border-radius: 0.75rem;
+  border: 1px solid #e0eafc;
+  box-shadow: none;
+}
+.form-control:focus, .form-select:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 0.2rem rgba(108,99,255,0.15);
+}
+
+.btn-primary {
+  background: var(--accent);
+  border: none;
+  border-radius: 0.75rem;
+  box-shadow: 0 2px 8px 0 rgba(108,99,255,0.10);
+  transition: background 0.2s, box-shadow 0.2s;
+}
+.btn-primary:hover {
+  background: var(--accent2);
+  box-shadow: 0 4px 16px 0 rgba(247,151,30,0.12);
+}
+
+.progress {
+  background: rgba(255,255,255,0.5);
+  border-radius: 0.75rem;
+  box-shadow: var(--glass-shadow);
+}
+
+.progress-bar {
+  background: var(--accent);
+  border-radius: 0.75rem;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  background: rgba(200,200,255,0.08);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--accent);
+  border-radius: 8px;
+}
+
+/* Utility classes */
+.text-glass {
+  color: #222;
+  text-shadow: 0 2px 8px rgba(255,255,255,0.25);
+}
+
+.card-icon {
+  font-size: 2.5rem;
+  color: var(--accent);
+  margin-bottom: 0.5rem;
+} 

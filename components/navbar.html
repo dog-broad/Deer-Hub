@@ -1,0 +1,34 @@
+<nav class="navbar navbar-expand-lg glassmorph-navbar shadow-sm">
+  <div class="container-fluid">
+    <a class="navbar-brand fw-bold" href="/pages/index.html">
+      🦌 DEER Hub
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto" id="nav-links">
+        <li class="nav-item">
+          <a class="nav-link" href="/pages/index.html">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/pages/leave.html">Leave Request</a>
+        </li>
+        <li class="nav-item manager-only d-none">
+          <a class="nav-link" href="/pages/upload.html">Upload</a>
+        </li>
+        <li class="nav-item" id="login-link">
+          <a class="nav-link" href="/pages/auth.html">Login</a>
+        </li>
+        <li class="nav-item d-none" id="user-dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="userMenu" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <span id="user-name">User</span>
+          </a>
+          <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userMenu">
+            <li><a class="dropdown-item" href="#" id="logout-btn">Logout</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav> 
