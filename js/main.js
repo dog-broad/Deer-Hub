@@ -16,6 +16,7 @@ function getSession() {
   }
 }
 
+
 function updateNavForSession() {
   const session = getSession();
   // Show/hide manager-only links
@@ -41,4 +42,61 @@ function updateNavForSession() {
     sessionStorage.removeItem("deerhub-session");
     window.location.href = "/pages/index.html";
   });
+  
 } 
+
+// Signup form handling
+$(document).ready(function () {
+  $("#registerForm").on("submit", function (e) {
+    e.preventDefault();
+
+    const name = $("#registerName").val().trim();
+    const email = $("#registerEmail").val().trim();
+    const password = $("#registerPassword").val(); // Store hashed in production
+    const confirmPassword = $("#confirmPassword").val();
+    const role = $("#registerRole").val();
+
+    if (password !== confirmPassword) {
+      alert("Passwords do not match.");
+      return;
+    }
+
+    const sessionData = {
+      isLoggedIn: true,
+      name: name,
+      email: email,
+      role: role
+    };
+
+    sessionStorage.setItem("deerhub-session", JSON.stringify(sessionData));
+    window.location.href = "/pages/index.html"; // Or dashboard.html
+  });
+});
+
+// Login form handling
+$(document).ready(function () {
+  $("#loginForm").on("submit", function (e) {
+    e.preventDefault();
+
+    const email = $("#loginEmail").val().trim();
+    const password = $("#loginPassword").val();
+    const role = $("#registerRole").val();
+
+    if (!email || !password || !role) {
+      alert("Please fill all fields.");
+      return;
+    }
+
+    // In production, validate credentials via API/server here
+
+    const sessionData = {
+      isLoggedIn: true,
+      name: email.split("@")[0], // Fallback name
+      email: email,
+      role: role
+    };
+
+    sessionStorage.setItem("deerhub-session", JSON.stringify(sessionData));
+    window.location.href = "/pages/index.html";
+  });
+});
