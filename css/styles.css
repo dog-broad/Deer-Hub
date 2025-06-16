@@ -80,11 +80,11 @@ body {
 }
 
 .glassmorph-form {
-  background: rgba(173, 216, 230, 0.4);
+  background: var(--glass-bg);
   border-radius: var(--radius);
   box-shadow: var(--glass-shadow);
   border: 1px solid var(--glass-border);
-  /* padding: 2rem 1.5rem; */
+  padding: 2rem 1.5rem;
 }
 .form-inner {
   background-color: #f0f4f8; /* Light bluish-gray */
