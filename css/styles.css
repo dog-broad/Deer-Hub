@@ -141,3 +141,16 @@ body {
   color: var(--accent);
   margin-bottom: 0.5rem;
 } 
+/* News Ticker Scroll Effect */
+#news-ticker {
+  position: relative;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.ticker-wrapper {
+  display: inline-block;
+  white-space: nowrap;
+  will-change: transform;
+  transition: transform 0.1s linear;
+}
