@@ -86,6 +86,26 @@ body {
   border: 1px solid var(--glass-border);
   padding: 2rem 1.5rem;
 }
+.form-inner {
+  background-color: #f0f4f8; /* Light bluish-gray */
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 1rem;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+}
+.leave-section > .container {
+  background: transparent !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  margin-bottom: 3rem; /* Increase bottom margin */
+}
+
+/* Optional: If there's an inner div still adding white box, remove its background too */
+.leave-section .form-container {
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
 
 .form-control, .form-select {
   background: rgba(255,255,255,0.7);
