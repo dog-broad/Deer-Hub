@@ -1,4 +1,10 @@
 [
-  { "msg": "New company policy released.", "date": "2025-06-10" },
-  { "msg": "Townhall on Friday at 4 PM.", "date": "2025-06-13" }
-] 
+  { "msg": "New remote work policy updated on DeerHub.", "date": "2025-06-10" },
+  { "msg": "CEO Townhall on Friday, 4 PM.", "date": "2025-06-13" },
+  { "msg": "DeerHub 2.0 launched with new features.", "date": "2025-06-14" },
+  { "msg": "Submit Q2 goals on DeerHub by June 20.", "date": "2025-06-15" },
+  { "msg": "New L&D portal live – explore courses.", "date": "2025-06-16" },
+  { "msg": "Employee of the Month: Priya Verma.", "date": "2025-06-16" },
+  { "msg": "Annual Picnic – register on DeerHub.", "date": "2025-06-17" },
+  { "msg": "Cyber Security training now available.", "date": "2025-06-17" }
+]
