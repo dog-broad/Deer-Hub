@@ -1,4 +1,6 @@
-/* Centralized Modern Glassmorphism Styles for DEER Hub */
+/* ===========================
+  Centralized Variables
+  =========================== */
 :root {
   --glass-bg: rgba(255, 255, 255, 0.18);
   --glass-border: rgba(255, 255, 255, 0.35);
@@ -9,6 +11,9 @@
   --radius: 1.25rem;
 }
 
+/* ===========================
+  Base Styles
+  =========================== */
 body {
   background: var(--primary-gradient);
   min-height: 100vh;
@@ -16,7 +21,14 @@ body {
   color: #222;
 }
 
-.glassmorph-navbar, .glassmorph-footer, .glassmorph-card, .glassmorph-form, .glassmorph-modal {
+/* ===========================
+  Glassmorphism Components
+  =========================== */
+.glassmorph-navbar,
+.glassmorph-footer,
+.glassmorph-card,
+.glassmorph-form,
+.glassmorph-modal {
   background: var(--glass-bg);
   border-radius: var(--radius);
   box-shadow: var(--glass-shadow);
@@ -25,6 +37,9 @@ body {
   -webkit-backdrop-filter: blur(12px);
 }
 
+/* ===========================
+  Navbar & Footer
+  =========================== */
 .glassmorph-navbar {
   margin-bottom: 1.5rem;
 }
@@ -40,10 +55,14 @@ body {
   text-decoration: none;
   transition: color 0.2s;
 }
+
 .footer-link:hover {
   color: #f7971e;
 }
 
+/* ===========================
+  Hero Section
+  =========================== */
 .hero-section {
   background: var(--glass-bg);
   border-radius: var(--radius);
@@ -54,6 +73,9 @@ body {
   backdrop-filter: blur(10px);
 }
 
+/* ===========================
+  Feature Cards
+  =========================== */
 .feature-card {
   background: var(--glass-bg);
   border-radius: var(--radius);
@@ -61,11 +83,15 @@ body {
   border: 1px solid var(--glass-border);
   transition: transform 0.2s, box-shadow 0.2s;
 }
+
 .feature-card:hover {
   transform: translateY(-6px) scale(1.03);
   box-shadow: 0 12px 32px 0 rgba(31, 38, 135, 0.22);
 }
 
+/* ===========================
+  News Ticker
+  =========================== */
 #news-ticker {
   background: var(--glass-bg);
   border-radius: var(--radius);
@@ -77,8 +103,19 @@ body {
   color: #333;
   overflow: hidden;
   position: relative;
+  white-space: nowrap;
 }
 
+.ticker-wrapper {
+  display: inline-block;
+  white-space: nowrap;
+  will-change: transform;
+  transition: transform 0.1s linear;
+}
+
+/* ===========================
+  Forms & Inputs
+  =========================== */
 .glassmorph-form {
   background: var(--glass-bg);
   border-radius: var(--radius);
@@ -86,52 +123,66 @@ body {
   border: 1px solid var(--glass-border);
   padding: 2rem 1.5rem;
 }
+
 .form-inner {
-  background-color: #f0f4f8; /* Light bluish-gray */
+  background-color: #f0f4f8;
+  /* Light bluish-gray */
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 1rem;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
   padding: 2rem;
 }
-.leave-section > .container {
+
+/* Remove background/box-shadow for leave-section forms */
+.leave-section>.container {
   background: transparent !important;
   box-shadow: none !important;
   padding: 0 !important;
-  margin-bottom: 3rem; /* Increase bottom margin */
+  margin-bottom: 3rem;
+  /* Increase bottom margin */
 }
 
-/* Optional: If there's an inner div still adding white box, remove its background too */
+/* Optional: Remove background for inner form container */
 .leave-section .form-container {
   background: transparent !important;
   box-shadow: none !important;
 }
 
-
-.form-control, .form-select {
-  background: rgba(255,255,255,0.7);
+.form-control,
+.form-select {
+  background: rgba(255, 255, 255, 0.7);
   border-radius: 0.75rem;
   border: 1px solid #e0eafc;
   box-shadow: none;
 }
-.form-control:focus, .form-select:focus {
+
+.form-control:focus,
+.form-select:focus {
   border-color: var(--accent);
-  box-shadow: 0 0 0 0.2rem rgba(108,99,255,0.15);
+  box-shadow: 0 0 0 0.2rem rgba(108, 99, 255, 0.15);
 }
 
+/* ===========================
+  Buttons
+  =========================== */
 .btn-primary {
   background: var(--accent);
   border: none;
   border-radius: 0.75rem;
-  box-shadow: 0 2px 8px 0 rgba(108,99,255,0.10);
+  box-shadow: 0 2px 8px 0 rgba(108, 99, 255, 0.10);
   transition: background 0.2s, box-shadow 0.2s;
 }
+
 .btn-primary:hover {
   background: var(--accent2);
-  box-shadow: 0 4px 16px 0 rgba(247,151,30,0.12);
+  box-shadow: 0 4px 16px 0 rgba(247, 151, 30, 0.12);
 }
 
+/* ===========================
+  Progress Bars
+  =========================== */
 .progress {
-  background: rgba(255,255,255,0.5);
+  background: rgba(255, 255, 255, 0.5);
   border-radius: 0.75rem;
   box-shadow: var(--glass-shadow);
 }
@@ -141,36 +192,29 @@ body {
   border-radius: 0.75rem;
 }
 
+/* ===========================
+  Scrollbar Styling
+  =========================== */
 ::-webkit-scrollbar {
   width: 8px;
-  background: rgba(200,200,255,0.08);
+  background: rgba(200, 200, 255, 0.08);
 }
+
 ::-webkit-scrollbar-thumb {
   background: var(--accent);
   border-radius: 8px;
 }
 
-/* Utility classes */
+/* ===========================
+  Utility Classes
+  =========================== */
 .text-glass {
   color: #222;
-  text-shadow: 0 2px 8px rgba(255,255,255,0.25);
+  text-shadow: 0 2px 8px rgba(255, 255, 255, 0.25);
 }
 
 .card-icon {
   font-size: 2.5rem;
   color: var(--accent);
   margin-bottom: 0.5rem;
-} 
-/* News Ticker Scroll Effect */
-#news-ticker {
-  position: relative;
-  overflow: hidden;
-  white-space: nowrap;
-}
-
-.ticker-wrapper {
-  display: inline-block;
-  white-space: nowrap;
-  will-change: transform;
-  transition: transform 0.1s linear;
 }

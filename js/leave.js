@@ -1,4 +1,10 @@
 document.addEventListener("DOMContentLoaded", function () {
+  // If user is not logged in, redirect to login page
+  if (!sessionStorage.getItem("isLoggedIn")) {
+    window.location.href = "/pages/login.html";
+    return;
+  }
+  
   const leaveForm = document.getElementById("leaveForm");
 
   if (leaveForm) {
