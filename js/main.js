@@ -46,6 +46,7 @@ function updateNavForSession() {
 // --------------------- Signup Form Validation & Handling ---------------------
 $(document).ready(function () {
   $("#registerForm").on("submit", function (e) {
+    e.preventDefault();
     const name = $("#registerName").val().trim();
     const email = $("#registerEmail").val().trim();
     const password = $("#registerPassword").val();
@@ -72,7 +73,7 @@ $(document).ready(function () {
     }
 
     // errorDiv.style.display = "none";
-
+    console.log("Form submitted successfully!");
     // Save session
     const sessionData = {
       isLoggedIn: true,
@@ -80,7 +81,7 @@ $(document).ready(function () {
       email: email,
       role: role,
     };
-
+    console.log("Session Data:", sessionData);
     sessionStorage.setItem("deerhub-session", JSON.stringify(sessionData));
     window.location.href = "/pages/index.html";
   });
