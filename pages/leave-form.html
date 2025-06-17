@@ -16,6 +16,19 @@
 
   <!-- Custom CSS -->
   <link rel="stylesheet" href="/css/styles.css"/>
+
+  <!-- Optional: Highlight valid/invalid fields -->
+  <!-- <style>
+    #leaveForm .form-control:invalid,
+    #leaveForm .form-select:invalid {
+      border-color: #dc3545;
+    }
+
+    #leaveForm .form-control:valid,
+    #leaveForm .form-select:valid {
+      border-color: #198754;
+    }
+  </style> -->
 </head>
 <body>
 
@@ -24,7 +37,6 @@
 
   <main class="leave-section">
     <div class="container shadow-sm rounded bg-white p-4">
-
       <div class="form-inner p-4">
         <div class="text-center mb-4">
           <i class="fas fa-calendar-check fa-2x text-primary mb-2"></i>
@@ -50,10 +62,12 @@
             <div class="col-md-6 mb-3">
               <label for="department" class="form-label">Department</label>
               <input type="text" class="form-control" id="department" required/>
+              <div class="invalid-feedback">Please enter your department.</div>
             </div>
             <div class="col-md-6 mb-3">
               <label for="contactEmail" class="form-label">Email Address</label>
               <input type="email" class="form-control" id="contactEmail" required/>
+              <div class="invalid-feedback">Please enter a valid email.</div>
             </div>
           </div>
 
@@ -80,6 +94,7 @@
                 <option>High</option>
                 <option>Urgent</option>
               </select>
+              <div class="invalid-feedback">Please select a priority level.</div>
             </div>
           </div>
 
@@ -87,10 +102,12 @@
             <div class="col-md-6 mb-3">
               <label for="startDate" class="form-label">Start Date</label>
               <input type="date" class="form-control" id="startDate" required/>
+              <div class="invalid-feedback">Please select a valid start date.</div>
             </div>
             <div class="col-md-6 mb-3">
               <label for="endDate" class="form-label">End Date</label>
               <input type="date" class="form-control" id="endDate" required/>
+              <div class="invalid-feedback">Please select a valid end date.</div>
             </div>
           </div>
 
@@ -101,6 +118,7 @@
           <div class="mb-3">
             <label for="reason" class="form-label">Reason for Leave</label>
             <textarea class="form-control" id="reason" rows="3" required></textarea>
+            <div class="invalid-feedback">Please provide a reason for your leave.</div>
           </div>
 
           <div class="mb-4">
@@ -117,14 +135,13 @@
               <li>Attach valid documents for sick or emergency leave.</li>
             </ul>
           </div>
-          <div class="text-center d-flex justify-content-center gap-3">
-  <button type="submit" class="btn btn-primary px-4">Submit Request</button>
-  <button type="reset" class="btn btn-secondary px-4">Reset</button>
-</div>
 
+          <div class="text-center d-flex justify-content-center gap-3">
+            <button type="submit" class="btn btn-primary px-4">Submit Request</button>
+            <button type="reset" class="btn btn-secondary px-4">Reset</button>
+          </div>
         </form>
       </div>
-
     </div>
   </main>
 
@@ -134,7 +151,7 @@
   <!-- Bootstrap Bundle JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
-  <!-- jQuery (required for main.js to load navbar/footer) -->
+  <!-- jQuery -->
   <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
 
   <!-- Page-specific JS -->

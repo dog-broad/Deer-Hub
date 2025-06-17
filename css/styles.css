@@ -93,6 +93,18 @@ body {
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
   padding: 2rem;
 }
+.leave-section > .container {
+  background: transparent !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  margin-bottom: 3rem; /* Increase bottom margin */
+}
+
+/* Optional: If there's an inner div still adding white box, remove its background too */
+.leave-section .form-container {
+  background: transparent !important;
+  box-shadow: none !important;
+}
 
 
 .form-control, .form-select {

@@ -81,9 +81,15 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     }
 
-    // Save form data to localStorage on submit
+    // Save form data to localStorage only if valid
     leaveForm.addEventListener("submit", function (e) {
       e.preventDefault();
+      e.stopPropagation();
+
+      if (!leaveForm.checkValidity()) {
+        leaveForm.classList.add("was-validated");
+        return; // Stop if form is invalid
+      }
 
       const formData = {
         employeeName: document.getElementById("employeeName").value,
@@ -101,16 +107,46 @@ document.addEventListener("DOMContentLoaded", function () {
 
       localStorage.setItem("leaveFormData", JSON.stringify(formData));
       alert("Form data saved to local storage!");
+
       leaveForm.reset();
+      leaveForm.classList.remove("was-validated");
       durationText.textContent = "Select dates to calculate duration.";
     });
 
-    // Reset form and clear duration on reset button (if exists)
+    // Reset form and clear duration on reset button
     const resetBtn = document.getElementById("resetBtn");
     if (resetBtn) {
       resetBtn.addEventListener("click", function () {
         durationText.textContent = "Select dates to calculate duration.";
+        leaveForm.classList.remove("was-validated");
       });
     }
+  }
+});
+
+$(function () {
+  // Load navbar and footer
+  $("#navbar").load("/components/navbar.html", updateNavForSession);
+  $("#footer").load("/components/footer.html");
+
+  // Leave form validation and duration update on submit
+  const leaveForm = document.getElementById("leaveForm");
+  if (leaveForm) {
+    leaveForm.addEventListener("submit", function (event) {
+      const start = document.getElementById("startDate").value;
+      const end = document.getElementById("endDate").value;
+
+      if (start && end) {
+        const startDate = new Date(start);
+        const endDate = new Date(end);
+        const duration = Math.floor((endDate - startDate) / (1000 * 60 * 60 * 24)) + 1;
+
+        if (duration > 0) {
+          document.getElementById("durationText").innerText = `Leave Duration: ${duration} day(s)`;
+        } else {
+          document.getElementById("durationText").innerText = `Invalid date range.`;
+        }
+      }
+    });
   }
 });
