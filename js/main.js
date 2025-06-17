@@ -20,7 +20,11 @@ function getSession() {
 function updateNavForSession() {
   const session = getSession();
 
+<<<<<<< HEAD
+  // Show/hide manager-only links
+=======
   // Manager-only links
+>>>>>>> origin/main
   if (session.role === "manager") {
     $(".manager-only").removeClass("d-none");
     $("#upload-card").removeClass("d-none");
@@ -29,7 +33,11 @@ function updateNavForSession() {
     $("#upload-card").addClass("d-none");
   }
 
+<<<<<<< HEAD
+  // Show/hide login/user
+=======
   // User login state
+>>>>>>> origin/main
   if (session.isLoggedIn) {
     $("#login-link").addClass("d-none");
     $("#user-dropdown").removeClass("d-none");
