@@ -1,11 +1,12 @@
 $(function() {
-
+  // Access control: Only allow managers
   const session = JSON.parse(sessionStorage.getItem("deerhub-session") || '{}');
   if (!session.isLoggedIn || session.role !== "manager") {
     window.location.href = "/pages/index.html";
     return;
   }
 
+  // Upload form simulation
   $("#upload-form").on("submit", function(e) {
     e.preventDefault();
     $("#upload-success").addClass("d-none");
