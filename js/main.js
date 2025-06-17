@@ -1,9 +1,10 @@
-// Load navbar and footer modularly
-$(function() {
-  $("#navbar").load("/components/navbar.html", function() {
+$(function () {
+  // Load navbar and footer modularly
+  $("#navbar").load("/components/navbar.html", function () {
     updateNavForSession();
   });
-  $("#footer").load("/components/footer.html", function() {
+
+  $("#footer").load("/components/footer.html", function () {
     updateNavForSession();
   });
 });
@@ -18,7 +19,8 @@ function getSession() {
 
 function updateNavForSession() {
   const session = getSession();
-  // Show/hide manager-only links
+
+  // Manager-only links
   if (session.role === "manager") {
     $(".manager-only").removeClass("d-none");
     $("#upload-card").removeClass("d-none");
@@ -26,7 +28,8 @@ function updateNavForSession() {
     $(".manager-only").addClass("d-none");
     $("#upload-card").addClass("d-none");
   }
-  // Show user dropdown if logged in
+
+  // User login state
   if (session.isLoggedIn) {
     $("#login-link").addClass("d-none");
     $("#user-dropdown").removeClass("d-none");
@@ -35,10 +38,11 @@ function updateNavForSession() {
     $("#login-link").removeClass("d-none");
     $("#user-dropdown").addClass("d-none");
   }
-  // Logout handler
-  $("#logout-btn").off("click").on("click", function(e) {
+
+  // Logout
+  $("#logout-btn").off("click").on("click", function (e) {
     e.preventDefault();
     sessionStorage.removeItem("deerhub-session");
     window.location.href = "/pages/index.html";
   });
-} 
+}
