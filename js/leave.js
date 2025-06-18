@@ -87,6 +87,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
+/*
 $(function () {
   // Optional duplicate logic to ensure jQuery fallback support for leave form
   const leaveForm = document.getElementById("leaveForm");
@@ -110,3 +111,4 @@ $(function () {
     });
   }
 });
+*/
