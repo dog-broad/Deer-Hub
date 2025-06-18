@@ -60,6 +60,25 @@ body {
   color: #f7971e;
 }
 
+.dropdown-menu {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius);
+  box-shadow: var(--glass-shadow);
+  backdrop-filter: blur(12px);
+  z-index: 1000;
+}
+
+.dropdown-item {
+  color: #222;
+  border-radius: 0.75rem;
+}
+
+.dropdown-item:hover {
+  color: #f7971e;
+  background-color: var(--glass-bg);
+}
+
 /* ===========================
   Hero Section
   =========================== */
@@ -217,4 +236,68 @@ body {
   font-size: 2.5rem;
   color: var(--accent);
   margin-bottom: 0.5rem;
+}
+
+/* ===========================
+  Toast Notifications
+  =========================== */
+.toast-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1050;
+}
+
+.toast {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius);
+  box-shadow: var(--glass-shadow);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  min-width: 300px;
+  margin-bottom: 0.75rem;
+}
+
+.toast-header {
+  background: rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid var(--glass-border);
+  padding: 0.75rem 1rem;
+  display: flex;
+  align-items: center;
+}
+
+.toast-header .btn-close {
+  margin-left: auto;
+  opacity: 0.5;
+}
+
+.toast-header .btn-close:hover {
+  opacity: 0.75;
+}
+
+.toast-body {
+  padding: 1rem;
+  color: #333;
+}
+
+.toast-icon {
+  margin-right: 0.5rem;
+  font-size: 1.1rem;
+}
+
+.toast-success .toast-icon {
+  color: #28a745;
+}
+
+.toast-error .toast-icon {
+  color: #dc3545;
+}
+
+.toast-warning .toast-icon {
+  color: #ffc107;
+}
+
+.toast-info .toast-icon {
+  color: #17a2b8;
 }

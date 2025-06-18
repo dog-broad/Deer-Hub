@@ -43,6 +43,9 @@ function updateNavForSession() {
   $("#logout-btn").off("click").on("click", function (e) {
     e.preventDefault();
     sessionStorage.removeItem("deerhub-session");
-    window.location.href = "/index.html";
+    toastManager.success("Logged out successfully");
+    setTimeout(() => {
+      window.location.href = "/index.html";
+    }, 1500);
   });
 }
