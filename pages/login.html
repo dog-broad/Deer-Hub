@@ -20,7 +20,7 @@
 
   <main class="auth-section">
     <div class="container">
-      <div class="row justify-content-center align-items-center min-vh-100">
+      <div class="row justify-content-center align-items-center min-vh-50">
         <div class="col-lg-5 col-md-7">
           <div class="glassmorph-form">
             <!-- Login Form -->
@@ -74,76 +74,6 @@
                 <div class="text-center">
                   <span class="switch-text">Don't have an account? </span>
                   <a href="/pages/signup.html" id="showRegister" class="switch-link footer-link">Sign up</a>
-                </div>
-              </form>
-            </div>
-
-            <!-- Register Form -->
-            <div id="register-form" class="auth-form" style="display: none;">
-              <div class="auth-header text-center mb-4">
-                <div class="auth-icon">
-                  <i class="fas fa-user-plus card-icon"></i>
-                </div>
-                <h2 class="auth-title text-glass">Join DEER Hub</h2>
-                <p class="auth-subtitle">Create your account to get started</p>
-              </div>
-
-              <form id="registerForm">
-                <div class="form-floating mb-3">
-                  <input type="text" class="form-control" id="registerName" placeholder="Full Name" required />
-                  <label for="registerName">
-                    <i class="fas fa-user me-2"></i>Full Name
-                  </label>
-                </div>
-
-                <div class="form-floating mb-3">
-                  <input type="email" class="form-control" id="registerEmail" placeholder="name@example.com" required />
-                  <label for="registerEmail">
-                    <i class="fas fa-envelope me-2"></i>Email Address
-                  </label>
-                </div>
-
-                <div class="form-floating mb-3">
-                  <select class="form-select" id="registerRole" required>
-                    <option value="">Choose your role</option>
-                    <option value="employee">Employee</option>
-                    <option value="manager">Manager</option>
-                  </select>
-                  <label for="registerRole">
-                    <i class="fas fa-briefcase me-2"></i>Role
-                  </label>
-                </div>
-
-                <div class="form-floating mb-3">
-                  <input type="password" class="form-control" id="registerPassword" placeholder="Password" required />
-                  <label for="registerPassword">
-                    <i class="fas fa-lock me-2"></i>Password
-                  </label>
-                </div>
-
-                <div class="form-floating mb-4">
-                  <input type="password" class="form-control" id="confirmPassword" placeholder="Confirm Password"
-                    required />
-                  <label for="confirmPassword">
-                    <i class="fas fa-lock me-2"></i>Confirm Password
-                  </label>
-                </div>
-
-                <div class="form-check mb-4">
-                  <input class="form-check-input" type="checkbox" id="agreeTerms" required />
-                  <label class="form-check-label" for="agreeTerms">
-                    I agree to the <a href="#" class="footer-link">Terms of Service</a> and
-                    <a href="#" class="footer-link">Privacy Policy</a>
-                  </label>
-                </div>
-
-                <button type="submit" class="btn btn-primary btn-lg w-100 mb-3">
-                  <i class="fas fa-user-plus me-2"></i>Create Account
-                </button>
-
-                <div class="text-center">
-                  <span class="switch-text">Already have an account? </span>
-                  <a href="#" id="showLogin" class="switch-link footer-link">Sign in</a>
                 </div>
               </form>
             </div>

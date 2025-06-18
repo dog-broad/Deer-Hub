@@ -45,7 +45,7 @@ $(document).ready(function () {
     };
 
     sessionStorage.setItem("deerhub-session", JSON.stringify(sessionData));
-    window.location.href = "/pages/index.html";
+    window.location.href = "/index.html";
   });
 });
 
@@ -78,6 +78,6 @@ $(document).ready(function () {
     };
 
     sessionStorage.setItem("deerhub-session", JSON.stringify(sessionData));
-    window.location.href = "/pages/index.html";
+    window.location.href = "/index.html";
   });
 });

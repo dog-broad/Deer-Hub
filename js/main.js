@@ -43,6 +43,6 @@ function updateNavForSession() {
   $("#logout-btn").off("click").on("click", function (e) {
     e.preventDefault();
     sessionStorage.removeItem("deerhub-session");
-    window.location.href = "/pages/index.html";
+    window.location.href = "/index.html";
   });
 }
