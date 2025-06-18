@@ -1,7 +1,11 @@
 document.addEventListener("DOMContentLoaded", function () {
   // If user is not logged in, redirect to login page
-  if (!JSON.parse(sessionStorage.getItem("deerhub-session"))?.isLoggedIn) {
-    window.location.href = "/pages/login.html";
+  const session = JSON.parse(sessionStorage.getItem("deerhub-session") || '{}');
+  if (!session.isLoggedIn) {
+    toastManager.warning("Please login to access this page");
+    setTimeout(() => {
+      window.location.href = "/pages/login.html";
+    }, 1500);
     return;
   }
   
@@ -45,6 +49,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
       if (!leaveForm.checkValidity()) {
         leaveForm.classList.add("was-validated");
+        toastManager.warning("Please fill all required fields correctly");
         return; // Stop if form is invalid
       }
 
@@ -63,7 +68,7 @@ document.addEventListener("DOMContentLoaded", function () {
       };
 
       localStorage.setItem("leaveFormData", JSON.stringify(formData));
-      alert("Form data saved to local storage!");
+      toastManager.success("Leave request submitted successfully!");
 
       leaveForm.reset();
       leaveForm.classList.remove("was-validated");
@@ -76,6 +81,7 @@ document.addEventListener("DOMContentLoaded", function () {
       resetBtn.addEventListener("click", function () {
         durationText.textContent = "Select dates to calculate duration.";
         leaveForm.classList.remove("was-validated");
+        toastManager.info("Form has been reset");
       });
     }
   }
@@ -98,6 +104,7 @@ $(function () {
           document.getElementById("durationText").innerText = `Leave Duration: ${duration} day(s)`;
         } else {
           document.getElementById("durationText").innerText = `Invalid date range.`;
+          toastManager.warning("Please select a valid date range");
         }
       }
     });

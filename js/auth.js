@@ -1,3 +1,15 @@
+// --------------------- Session Check ---------------------
+$(document).ready(function () {
+  const session = JSON.parse(sessionStorage.getItem("deerhub-session") || '{}');
+  if (session.isLoggedIn) {
+    toastManager.info("You are already logged in");
+    setTimeout(() => {
+      window.location.href = "/index.html";
+    }, 1500);
+    return;
+  }
+});
+
 // --------------------- Signup Form Validation & Handling ---------------------
 $(document).ready(function () {
   $("#registerForm").on("submit", function (e) {
@@ -15,12 +27,14 @@ $(document).ready(function () {
     if (!strongPasswordRegex.test(password)) {
       errorDiv.style.display = "block";
       errorDiv.innerText = "Password must be at least 8 characters and include uppercase, lowercase, number, and special character.";
+      toastManager.error("Password must meet security requirements");
       return;
     }
 
     if (password !== confirmPassword) {
       errorDiv.style.display = "block";
       errorDiv.innerText = "Passwords do not match.";
+      toastManager.error("Passwords do not match");
       return;
     }
 
@@ -29,7 +43,7 @@ $(document).ready(function () {
     const userExists = existingUsers.some(user => user.email === email);
 
     if (userExists) {
-      alert("User with this email already exists.");
+      toastManager.error("User with this email already exists");
       return;
     }
 
@@ -45,7 +59,10 @@ $(document).ready(function () {
     };
 
     sessionStorage.setItem("deerhub-session", JSON.stringify(sessionData));
-    window.location.href = "/index.html";
+    toastManager.success("Account created successfully!");
+    setTimeout(() => {
+      window.location.href = "/index.html";
+    }, 1500);
   });
 });
 
@@ -58,7 +75,7 @@ $(document).ready(function () {
     const password = $("#loginPassword").val();
 
     if (!email || !password) {
-      alert("Please fill all fields.");
+      toastManager.warning("Please fill all fields");
       return;
     }
 
@@ -66,7 +83,7 @@ $(document).ready(function () {
     const foundUser = users.find(user => user.email === email && user.password === password);
 
     if (!foundUser) {
-      alert("Invalid credentials or user not found.");
+      toastManager.error("Invalid credentials or user not found");
       return;
     }
 
@@ -78,6 +95,9 @@ $(document).ready(function () {
     };
 
     sessionStorage.setItem("deerhub-session", JSON.stringify(sessionData));
-    window.location.href = "/index.html";
+    toastManager.success("Welcome back, " + foundUser.name + "!");
+    setTimeout(() => {
+      window.location.href = "/index.html";
+    }, 1500);
   });
 });
