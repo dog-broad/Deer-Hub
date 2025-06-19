@@ -1,3 +1,16 @@
+// --------------------- Password Hashing Helper ---------------------
+function hashPassword(password) {
+  // Simple SHA-256 hashing using SubtleCrypto (returns a Promise)
+  const encoder = new TextEncoder();
+  return window.crypto.subtle.digest('SHA-256', encoder.encode(password))
+    .then(hashBuffer => {
+      // Convert ArrayBuffer to hex string
+      return Array.from(new Uint8Array(hashBuffer))
+        .map(b => b.toString(16).padStart(2, '0'))
+        .join('');
+    });
+}
+
 // --------------------- Session Check ---------------------
 $(document).ready(function () {
   const session = JSON.parse(sessionStorage.getItem("deerhub-session") || '{}');
@@ -12,7 +25,7 @@ $(document).ready(function () {
 
 // --------------------- Signup Form Validation & Handling ---------------------
 $(document).ready(function () {
-  $("#registerForm").on("submit", function (e) {
+  $("#registerForm").on("submit", async function (e) {
     e.preventDefault();
 
     const name = $("#registerName").val().trim();
@@ -47,7 +60,10 @@ $(document).ready(function () {
       return;
     }
 
-    const newUser = { name, email, password, role };
+    // Hash the password before storing
+    const hashedPassword = await hashPassword(password);
+
+    const newUser = { name, email, password: hashedPassword, role };
     existingUsers.push(newUser);
     localStorage.setItem("deerhub-users", JSON.stringify(existingUsers));
 
@@ -68,7 +84,7 @@ $(document).ready(function () {
 
 // --------------------- Login Form Handling ---------------------
 $(document).ready(function () {
-  $("#loginForm").on("submit", function (e) {
+  $("#loginForm").on("submit", async function (e) {
     e.preventDefault();
 
     const email = $("#loginEmail").val().trim();
@@ -80,7 +96,9 @@ $(document).ready(function () {
     }
 
     const users = JSON.parse(localStorage.getItem("deerhub-users")) || [];
-    const foundUser = users.find(user => user.email === email && user.password === password);
+    // Hash the entered password for comparison
+    const hashedPassword = await hashPassword(password);
+    const foundUser = users.find(user => user.email === email && user.password === hashedPassword);
 
     if (!foundUser) {
       toastManager.error("Invalid credentials or user not found");
